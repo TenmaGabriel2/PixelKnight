@@ -1,0 +1,15 @@
+Unity阶段性学习成果
+有限状态机与Animator实现角色基础控制
+json存储角色数据
+UGUI完成UI制作
+A*实现AI寻路
+对象池实现AI刷新
+Scriptableobj制作物品模版 实现随机物品掉落及背包物品展示
+对角色的主要控制由Player.cs完成 怪物用Monster.cs完成
+由于两个角色的攻击方式不太相同 攻击分为PlayerAttack和PlayerAttackWizard
+伤害由AttackCounter实现 金毛骑士和怪物共用一个 蓝毛法师单独用一个
+音效播放由SoundManager实现 分通道播放音效 防止冲突
+
+目前demo统计击杀20个怪物完成阶段胜利 弹出提示可选择继续或退出
+怪物随机掉落消耗品 消耗品可改变角色属性 
+技能系统目前只有冲刺 同时有冷却时间与对应音效
