@@ -1,18 +1,18 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+//è¿™ä¸ªå¼ƒç”¨  player1ä¹Ÿæ˜¯å¼ƒç”¨çš„ 
 public class Character : MonoBehaviour
 {
     protected Rigidbody2D rb;
     protected Animator animator;
     protected SpriteRenderer spriteRenderer;
 
-    //¹¥»÷Ïà¹Ø
+    //æ”»å‡»ç›¸å…³
     protected bool isAttacking;
 
-    //ÑªÁ¿Ïà¹Ø
-    [Header("ÊôĞÔ")]
+    //è¡€é‡ç›¸å…³
+    [Header("å±æ€§")]
     [SerializeField]protected float maxHp;
     [SerializeField]protected float currentHp;
 
@@ -21,7 +21,7 @@ public class Character : MonoBehaviour
     protected Color originalColor;
     protected float fadeOutTime = 3f;
 
-    //¶ÔÏó¼¤»îÊ±ÂúÑª
+    //å¯¹è±¡æ¿€æ´»æ—¶æ»¡è¡€
     protected virtual void OnEnabled()
     {
         currentHp = maxHp;
@@ -56,27 +56,27 @@ public class Character : MonoBehaviour
             return;
 
         isDead = true;
-        //ËÀÍö  ·ÀÖ¹Í£Ö¹ÆäËûÂß¼­
+        //æ­»äº¡  é˜²æ­¢åœæ­¢å…¶ä»–é€»è¾‘
         animator.SetBool("isDead", true);
         rb.velocity = Vector2.zero;
 
          StartCoroutine(FadeAndMoveToPool());
 
-        //½ûÓÃ½Å±¾²»·½±ãÏú»Ù¶ÔÏó
+        //ç¦ç”¨è„šæœ¬ä¸æ–¹ä¾¿é”€æ¯å¯¹è±¡
         //enabled = false;
     }
 
   
 
-    //ËÀÍöºóÏú»Ù µ«Ó¦¸ÃÔÚ³¡ÄÚ´æÔÚ3s×óÓÒ
+    //æ­»äº¡åé”€æ¯ ä½†åº”è¯¥åœ¨åœºå†…å­˜åœ¨3så·¦å³
     protected virtual IEnumerator FadeAndMoveToPool()
     {
-        yield return new WaitForSeconds(2f);//µÈ·ÅÍêËÀÍö¶¯»­
-        //¹ıÈ¥µÄÊ±¼ä
+        yield return new WaitForSeconds(2f);//ç­‰æ”¾å®Œæ­»äº¡åŠ¨ç”»
+        //è¿‡å»çš„æ—¶é—´
         float pastTime = 0f;
         while (pastTime < fadeOutTime)
         {
-            // 1~0ÏßĞÔ²åÖµ¼ÆËãÍ¸Ã÷¶È
+            // 1~0çº¿æ€§æ’å€¼è®¡ç®—é€æ˜åº¦
             float alpha = Mathf.Lerp(1f, 0f, pastTime / fadeOutTime);
             spriteRenderer.color = new Color(originalColor.r, originalColor.g, originalColor.b, alpha);
 
@@ -84,7 +84,7 @@ public class Character : MonoBehaviour
             yield return null;
         }
 
-        //ºóÃæĞ´MoveToPoolÂß¼­ Unity×Ô´øµÄ¶ÔÏó³Ø 
-        //¹ÖÎï¡¢bossÀàÖĞÊµÏÖ Íæ¼ÒÖ»ĞèÒªFadeºóÃæÔÙÏÔÊ¾Ê§°ÜÒ³ÃæÊ²Ã´µÄ ¹ÖÎïÒªToPool 
+        //åé¢å†™MoveToPoolé€»è¾‘ Unityè‡ªå¸¦çš„å¯¹è±¡æ±  
+        //æ€ªç‰©ã€bossç±»ä¸­å®ç° ç©å®¶åªéœ€è¦Fadeåé¢å†æ˜¾ç¤ºå¤±è´¥é¡µé¢ä»€ä¹ˆçš„ æ€ªç‰©è¦ToPool 
     }
 }
