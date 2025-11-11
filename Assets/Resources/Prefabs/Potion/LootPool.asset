@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: caa73bea5cc41b545a533d8bd4b4a38c, type: 3}
+  m_Name: LootPool
+  m_EditorClassIdentifier: 
+  lootList:
+  - {fileID: 4966114742256003197, guid: d6cf9fa3a1df22c48bbf5d730518de44, type: 3}
+  - {fileID: 5765715571871037526, guid: 64b6ee72cb66b494b808e90f9b5cb4c3, type: 3}
+  - {fileID: 6761642063979924781, guid: 132d75237807cc04e90ebd5d1c890910, type: 3}
+  - {fileID: 2094392314257084117, guid: cb0872b5ba70ac442a38e2b5456b2c8c, type: 3}
