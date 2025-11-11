@@ -14,7 +14,7 @@ public class BKMusic : MonoBehaviour
         instance = this;
         bkMusicSource = GetComponent<AudioSource>();
 
-        //通过数据得到音乐大小
+       
         MusicData data = GameDataManager.Instance.musicData;
         OpenMusic(data.isMusicOpen);
         ChangeMusicVolume(data.musicVolume);
